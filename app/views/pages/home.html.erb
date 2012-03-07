@@ -1,0 +1,24 @@
+<% if signed_in? %>
+
+  <table class="front" summary="For signed-in users">
+    <tr>
+      you're signed in. hopefully i can display number groups here.each number group should be editable, and there should be a form for making a new number group. clicking on a number group will allow you to send a text to that number group.
+	td class="main">
+        <h1 class="numbergroup">What's up?</h1>
+        <%= render 'shared/numbergroup_form' %>
+        <%= render 'shared/numbergroups' %>
+      </td>
+	
+    </tr>
+  </table>
+
+<% else %>
+
+<h1>Sample App</h1>
+<p>
+  This is the home page for grouptext
+</p>
+
+<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+
+<% end %>

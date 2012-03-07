@@ -1,0 +1,6 @@
+<% if @numbergroup_items.any? %>
+  <table class="numbergroups" summary="Number Groups Summary">
+    <%= render :partial => 'shared/numbergroup_item', :collection => @numbergroup_items %>
+  </table>
+  <%= will_paginate @numbergroup_items%>
+<% end %>
