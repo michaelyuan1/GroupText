@@ -2,7 +2,9 @@ class User < ActiveRecord::Base
   attr_accessor   :password
   attr_accessible :name, :password, :password_confirmation
   
-  has_many :numbergroups, :dependent => :destroy
+  validate :phonenumbers_count_within_bounds
+  
+  has_many :phonenumbers, :dependent => :destroy
     
   validates :name,  :presence => true,
                     :length   => { :maximum => 50 }
@@ -46,5 +48,8 @@ class User < ActiveRecord::Base
     
     def secure_hash(string)
       Digest::SHA2.hexdigest(string)
+    end
+    def phonenumbers_count_within_bounds
+      errors.add("too many phone numbers") if Phonenumber.where(:user_id => self.id).count > 10
     end
 end

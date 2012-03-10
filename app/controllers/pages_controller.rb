@@ -3,8 +3,8 @@ class PagesController < ApplicationController
   def home
     @title = "Home"
     if signed_in?
-      @numbergroup=Numbergroup.new
-      @numbergroup_items = Numbergroup.where("user_id = ?",current_user.id).paginate(:page => params[:page])
+      @phonenumber=Phonenumber.new
+      @phonenumber_items = Phonenumber.where("user_id = ?",current_user.id).paginate(:page => params[:page])
     end
   end
 

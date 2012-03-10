@@ -1,0 +1,13 @@
+<%@phonenumber_items = Phonenumber.where("user_id = ?",current_user.id).paginate(:page => params[:page])%>
+<% if @phonenumber_items.any? %>
+  <table class="table table-striped summary="Number Groups Summary">
+	<thead>
+		<tr>
+			<th> Number </th>
+		</tr>
+	</thead>
+	<tbody>
+    <%= render :partial => 'shared/phonenumber_item', :collection => @phonenumber_items %>
+  </table>
+  <%= will_paginate @phonenumber_items%>
+<% end %>

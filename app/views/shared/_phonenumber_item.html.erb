@@ -1,0 +1,12 @@
+<tr>
+  <td class="phonenumber">
+    <span class="content"><%= phonenumber_item.number %></span>
+  </td>
+  <% if current_user?(phonenumber_item.user) %>
+    <td>
+      <%= link_to "delete", phonenumber_item, :method => :delete,
+                                       :confirm => "You sure?",
+                                       :title => phonenumber_item.user, :class=> 'btn btn-mini btn-danger' %>
+    </td>
+  <% end %>
+</tr>

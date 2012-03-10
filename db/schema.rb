@@ -11,28 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120304034200) do
-
-  create_table "numbergroups", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-    t.integer  "user_id"
-  end
+ActiveRecord::Schema.define(:version => 20120307190200) do
 
   create_table "phonenumbers", :force => true do |t|
     t.string   "number"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "numbergroup_id"
   end
 
   create_table "users", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "encrypted_password"
     t.string   "salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

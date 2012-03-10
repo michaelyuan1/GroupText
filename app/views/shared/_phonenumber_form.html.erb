@@ -1,0 +1,19 @@
+<%= form_for @phonenumber do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+
+	Add a new phone number. Maximum 10.
+<div class="row">
+	     	
+</div>
+	<em> 
+		<div class = "clearfix">
+		<div class="field">
+			<%= f.label :number %><br />
+    		<%= f.text_field :number %>
+  		</div>
+  		<div class="actions">
+    		<%= f.submit "Submit" %>
+  		</div>
+		</div>
+	</em>
+<% end %>

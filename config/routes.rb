@@ -1,9 +1,15 @@
 Grouptext::Application.routes.draw do
   
-  resources :users
+  
   resources :sessions,      :only => [:new, :create, :destroy]
-  resources :numbergroups
   resources :phonenumbers
+  
+  resources :users do
+    collection do
+      get 'compose_message'
+      post 'send_message'
+    end
+  end
   
   root :to => "pages#home"
 
@@ -13,5 +19,8 @@ Grouptext::Application.routes.draw do
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
+  match 'send_message', :to => 'users#send_message'
+  
+ 
 
 end
