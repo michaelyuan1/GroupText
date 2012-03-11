@@ -19,7 +19,7 @@ Grouptext::Application.routes.draw do
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
-  match 'send_message', :to => 'users#send_message'
+  match 'users/send_message', :to => 'users#send_message'
   
  
 

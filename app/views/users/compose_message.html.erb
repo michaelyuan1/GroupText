@@ -1,24 +1,6 @@
-<style type="text/css">
-p.padding{
-	padding-top: 20px
-}
-</style>
-<div class = padding>
-
-<form action = "send_message" id = "message_form">
-	<fieldset>
-		<legend>Send a Message to Everyone!</legend>
-		<div class = "clearfix">
-			<label for = "message">Message Body</label>
-			<div class = "input">
-				<TEXTAREA data-validation = "validate_email" id = "text" type="text_area" value = "" placeholder = "lorem ipsum"> </TEXTAREA>
-			</div>
-		</div>
-		<%= submit_tag("Text!") %>
-</div>
 
 <%=form_tag({:controller => "users", :action => "send_message"}) do%>
-	<%= label_tag(:q, "Message Body") %>
-	  <%= text_area_tag(:q) %>
-	  <%= submit_tag("Text!") %>
+	<%= label_tag(:text, "Message Body. Messages over 160 characters will not be sent")%>
+	<%= text_area_tag(:text) %>
+	<%= submit_tag("Text!") %>
 <% end %>
