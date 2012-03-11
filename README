@@ -2,4 +2,12 @@ This Rails app allows users to sign up, and then to enter in up to three phone n
 
 The frontend code is styled using Twitter Bootstrap. Currently all form validation is backend, i hope to add some frontend javascript validation. The app is designed to be safe from mass assignment attack and its sign-in is designed to be secure. 
 
-To run the server, simply cd in and use rails s. You will need rails 3.2. 
+To run the server, first cd in. Run these commands:
+
+rake db:drop
+rake db:create
+rake db:migrate
+
+in order to ensure that the database works.
+
+Then use rails s; the site will run at localhost:3000. You will need rails 3.2. 
