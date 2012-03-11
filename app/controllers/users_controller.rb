@@ -4,7 +4,7 @@ require 'rubygems'
 
 class UsersController < ApplicationController
   
-  before_filter :correct_user, :only => [:edit, :update, :destroy]
+  before_filter :correct_user, :only => [:destroy]
 
   def new
     if signed_in?
